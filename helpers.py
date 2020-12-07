@@ -10,7 +10,7 @@ from time import sleep
 
 
 
-def webscraping_deptos(region,pages,scope):  
+def webscraping_deptos(region,pages,type,scope):  
 
     urls = []
     titles = []
@@ -36,11 +36,11 @@ def webscraping_deptos(region,pages,scope):
 
     print("Web Scraping Portal Inmobiliario")
 
-    print(f"Buscando departamentos para {scope}....")
+    print(f"Buscando {type} para {scope}....")
     
     #Iterar por pagina para encontrar las urls de cada oferta de depto y almacenar los resultados en una lista llamada urls
     for i in range(1,pages*50,50):
-        main_url = 'https://www.portalinmobiliario.com/'+scope.lower().replace(" ","-")+'/departamento/'+region+'/_Desde_'+ str(i)
+        main_url = 'https://www.portalinmobiliario.com/'+scope.lower().replace(" ","-")+'/'+type+'/'+region+'/_Desde_'+ str(i)
         main_response = requests.get(main_url)
         main_soup = BeautifulSoup(main_response.text,'html.parser')
         containers = main_soup.find_all('li',{'class':'ui-search-layout__item'})
