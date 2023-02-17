@@ -1,6 +1,6 @@
 # apartment-rental-chile
 
-## This Project is not being maintained Anymore
+## IMPORTANT!!: This Project is not being maintained Anymore
 
 A cool way to  analyze the rental offers of apartmens in Chile using Python Scripts and Power Bi Dashboards
 
